@@ -1,0 +1,27 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  :root {
+    --background: 195 100% 98%;
+    --foreground: 200 25% 10%;
+
+    --card-foreground: 200 25% 10%;
+
+    --primary: 183 75% 76%;
+    --accent: 170 65% 65%;
+    --muted: 195 40% 94%;
+    --muted-foreground: 200 25% 46%;
+
+    --border: 195 32% 90%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(183 75% 76%), hsl(170 65% 65%));
+    --gradient-bg: linear-gradient(180deg, hsl(195 100% 98%), hsl(195 40% 94%));
+    --shadow-card: 0 4px 12px -2px hsl(183 75% 76% / 0.15);
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
