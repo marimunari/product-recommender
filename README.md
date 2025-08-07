@@ -1,102 +1,216 @@
-# Teste Técnico - Recomendador de Produtos RD Station
+# 🧠 Recomendador de Produtos RD Station
 
-Este projeto é parte do teste técnico para a vaga de desenvolvedor front-end na RD Station. O objetivo principal é implementar a lógica de recomendação de produtos RD Station em uma aplicação web existente.
+O **Recomendador de Produtos RD Station** é um projeto que permite você encontrar uma variedade de produtos da RD Station, cada um projetado para atender às necessidades específicas do seu negócio. De CRM a Marketing, de Conversas a Inteligência Artificial, existe uma solução para ajudar o usuário a alcançar seus objetivos.
 
-## Missão
-
-Sua missão é desenvolver a funcionalidade central de recomendação de produtos dentro de uma aplicação React.js pré-existente. Você deverá implementar a lógica que permite aos usuários selecionar suas preferências e funcionalidades desejadas, e então receber recomendações de produtos correspondentes.
-
-## Contexto
-
-Este projeto é parte de uma etapa técnica do processo seletivo para a vaga de desenvolvedor front-end na RD Station. A estrutura básica da aplicação já está construída com React.js para o front-end e utiliza json-server para simular um servidor RESTful com dados de produtos.
-
-Seu foco deve ser na implementação da lógica de recomendação e na integração desta funcionalidade com a interface do usuário existente. A aplicação já possui um layout básico utilizando Tailwind CSS.
-
-## Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 Este projeto utiliza as seguintes tecnologias principais:
 
-- React.js: Para o desenvolvimento do front-end
-- json-server: Para simular um servidor RESTful com dados de produtos
-- Tailwind CSS: Para estilização e layout responsivo
+| Tecnologia     | Descrição                                        |
+|----------------|--------------------------------------------------|
+| **React.js**   | Framework principal para construção da interface |
+| **Tailwind CSS** | Framework de estilos utilitário moderno        |
+| **json-server** | API REST fake para simular backend com `db.json`|
+| **Node.js 18.3+** | Runtime JavaScript necessário para o projeto  |
+| **Yarn Workspaces + Lerna** | Gerenciamento monorepo frontend/backend |
 
-## Requisitos Técnicos
+## 📦 Bibliotecas Utilizadas
 
-### Familiaridade com Tailwind CSS
+### 🔧 Backend (`json-server`)
 
-O layout da aplicação foi desenvolvido utilizando Tailwind CSS. Familiaridade básica com este framework de CSS utilitário será útil para entender e potencialmente modificar o layout existente.
+| Biblioteca      | Versão               | Descrição                                   |
+|----------------|----------------------|---------------------------------------------|
+| `json-server`  | ^1.0.0-alpha.23      | Simula uma API REST fake com um arquivo JSON como base de dados |
 
-### Versão do Node.js
+---
 
-Este projeto requer Node.js versão 18.3 ou superior. Se você não tem essa versão instalada, siga as instruções abaixo para instalá-la usando `n` ou `nvm`.
+### 🎨 Frontend (React + Tailwind)
+
+| Biblioteca                      | Versão        | Descrição                                          |
+|--------------------------------|---------------|----------------------------------------------------|
+| `react`                        | ^18.2.0       | Biblioteca principal para construção de interfaces |
+| `react-dom`                    | ^18.2.0       | Integra React ao DOM                               |
+| `react-scripts`                | ^5.0.1        | Scripts de build e dev do CRA                      |
+| `react-icons`                 | ^5.5.0        | Biblioteca de ícones para React                    |
+| `axios`                        | ^0.27.2       | Cliente HTTP para chamadas de API                  |
+| `tailwindcss`                  | ^3.4.1        | Framework CSS utilitário                           |
+| `postcss`                      | ^8.4.34       | Processador CSS para usar Tailwind                 |
+| `autoprefixer`                 | ^10.4.17      | Adiciona prefixos CSS automaticamente              |
+
+---
+
+### 🧪 Testes
+
+| Biblioteca                        | Versão       | Descrição                                         |
+|----------------------------------|--------------|---------------------------------------------------|
+| `@testing-library/react`         | ^14.3.1      | Testes para componentes React                     |
+| `@testing-library/user-event`    | ^14          | Simula interações do usuário nos testes           |
+| `@testing-library/jest-dom`      | ^5.14.1      | Matchers personalizados para testes DOM com Jest  |
+| `babel-jest`                     | ^30.0.5      | Suporte a Babel nos testes com Jest               |
+
+---
+
+### 📐 Lint & Build
+
+| Biblioteca                                        | Versão       | Descrição                                     |
+|--------------------------------------------------|--------------|-----------------------------------------------|
+| `eslint`                                         | ^8.56.0      | Ferramenta de linting para código JavaScript  |
+| `eslint-plugin-react`                            | ^7.33.2      | Regras de lint para React                     |
+| `@babel/core`                                    | ^7.28.0      | Núcleo do Babel                               |
+| `@babel/preset-env`                              | ^7.28.0      | Preset para compilar JS moderno               |
+| `@babel/preset-react`                            | ^7.27.1      | Preset para compilar JSX                      |
+| `@babel/plugin-proposal-private-property-in-object` | ^7.21.11 | Suporte para propriedades privadas no Babel   |
+| `postcss-loader`                                 | ^8.1.1       | Permite uso do PostCSS no webpack             |
+
+---
+
+### 🛠️ Workspace Monorepo
+
+| Biblioteca      | Versão     | Descrição                                     |
+|----------------|------------|-----------------------------------------------|
+| `lerna`         | ^8.0.2     | Gerenciamento de pacotes em monorepo          |
+| `concurrently`  | —          | Executa múltiplos comandos simultaneamente    |
+
+---
+  
+## 📂 Estrutura do Projeto
+
+A estrutura de diretórios do projeto é a seguinte:
+```
+src/
+├── 📁 __tests__/                  # Testes unitários
+├── 📁 assets/                    # Recursos estáticos (imagens, ícones)
+│   └── 📁 images/                # Imagens do projeto
+├── 📁 components/                # Componentes React
+│   ├── 📁 BackToTopButton/       # Componente botão "voltar ao topo"
+│   ├── 📁 Card/                  # Componentes do Card de recomendação
+│   │   ├── Card.js              # Componente principal do Card
+│   │   ├── CardContent.js       # Conteúdo do Card
+│   │   ├── CardDescription.js   # Descrição do Card
+│   │   ├── CardHeader.js        # Cabeçalho do Card
+│   │   └── CardTitle.js         # Título do Card
+│   ├── 📁 Footer/                # Componente rodapé
+│   ├── 📁 Form/                  # Componentes do formulário
+│   │   ├── 📁 ClearButton/       # Botão limpar formulário
+│   │   │   └── ClearButton.js
+│   │   ├── 📁 Fields/            # Campos do formulário
+│   │   │   ├── Features.js       # Campo funcionalidades
+│   │   │   ├── Preferences.js    # Campo preferências
+│   │   │   └── RecommendationType.js  # Campo tipo de recomendação
+│   │   ├── 📁 SubmitButton/      # Botão enviar formulário
+│   │   │   └── SubmitButton.js
+│   │   └── Form.js               # Formulário principal
+│   ├── 📁 Header/                # Componente cabeçalho
+│   │   └── Header.js
+│   ├── 📁 Modal/                 # Componente modal
+│   │   └── Modal.js
+│   ├── 📁 RecommendationList/   # Lista de recomendações
+│   │   └── RecommendationList.js
+│   └── 📁 shared/                # Componentes reutilizáveis
+│       ├── 📁 Checkbox/          # Componente checkbox acessível
+│       │   └── Checkbox.js
+│       └── 📁 Tag/               # Componente tag
+│           └── Tag.js
+│   └── index.js                 # Exportação geral dos componentes
+├── 📁 hooks/                    # Hooks customizados React
+│   ├── 📁 useForm/              # Hook de gerenciamento do formulário
+│   │   └── useForm.js
+│   ├── 📁 useProducts/          # Hook para gerenciamento de produtos
+│   │   └── useProducts.js
+│   ├── 📁 useRecommendations/   # Hook para lógica de recomendações
+│   │   └── useRecommendations.js
+│   └── index.js                 # Exportação geral dos hooks
+├── 📁 mocks/                    # Dados mock para testes e desenvolvimento
+│   └── mockProducts.js
+├── 📁 services/                 # Serviços para chamadas API e lógica
+│   ├── 📁 product/              # Serviços relacionados a produtos
+│   │   └── product.service.js
+│   ├── 📁 recommendation/       # Serviços relacionados a recomendações
+│   │   ├── recommendation.helpers.js
+│   │   └── recommendation.service.js
+│   └── index.js                 # Exportação geral dos serviços
+└── App.js                       # Componente raiz da aplicação
+```
+
+## 🧩 Funcionalidades
+- Formulário para seleção de preferências e funcionalidades
+- Sistema de recomendação baseado nas preferências do usuário
+- Suporte a recomendação única (`SingleProduct`)
+- Suporte a múltiplas recomendações (`MultipleProducts`)
+
+## ⚙️ Como Instalar e Rodar o Projeto
+
+### 📋 Pré-requisitos
+
+Certifique-se de ter o **Node.js** na versão 18.3 ou superior. Caso não tenha, siga as instruções abaixo para instalar a versão correta.
 
 #### Usando `n` (Node Version Manager):
 
-1. Instale `n` globalmente (caso ainda não tenha): npm install -g n
+1. Instale `n` globalmente (caso ainda não tenha):  
+   ```bash
+   npm install -g n
 
-2. Instale e use a versão 18.3 do Node.js: n 18.3
+2. Instale e use a versão 18.3 do Node.js: 
+   ```bash
+   n 18.3
+   
+#### Usando nvm (Node Version Manager):
+1. Instale nvm (caso ainda não tenha) seguindo as instruções em: nvm-sh/nvm
+2. Instale e use a versão 18.3 do Node.js:
+   ```bash
+   nvm install 18.3
+   nvm use 18.3
 
-#### Usando `nvm` (Node Version Manager):
+## 🚀 Passos para rodar o projeto
 
-1. Instale `nvm` (caso ainda não tenha) seguindo as instruções em: https://github.com/nvm-sh/nvm
+1. Clone o repositório:
+  ```bash
+  git clone https://github.com/marimunari/product-recommender.git
+  ```
 
-2. Instale e use a versão 18.3 do Node.js: nvm install 18.3 & nvm use 18.3
+2. Navegue até a pasta do projeto:
+  ```bash
+  cd product-recommender
+  ```
+  
+3. Instale as dependências do projeto:
+  ```bash
+  yarn install
+  ```
+  
+4. Para instalar o projeto, execute o script install.sh:
+  ```bash
+  ./install.sh
+  ```
 
-Após instalar a versão correta do Node.js, você pode prosseguir com a instalação das dependências do projeto e iniciar o desenvolvimento.
+5. Inicie o projeto (frontend e backend simultaneamente):
+  ```bash
+  yarn dev
+  ```
+  
+## 🚀 Passos para rodar os testes
+1. Navegue até a pasta frontend do projeto:
+  ```bash
+  cd frontend
+  ```
 
-## Foco do Desenvolvimento
+2. Rode o seguinte comando:
+  ```bash
+  yarn test
+  ```
 
-Para completar este teste, você deve concentrar-se principalmente em três arquivos específicos:
+## 📜 Scripts Disponíveis
+| Script           | Descrição                                                                 |
+|------------------|---------------------------------------------------------------------------|
+| `start`          | Inicia a aplicação React em modo de desenvolvimento.                     |
+| `start:frontend` | Inicia apenas o frontend da aplicação.                                   |
+| `start:backend`  | Inicia apenas o backend da aplicação.                                    |
+| `dev`            | Inicia simultaneamente o frontend e o backend em modo de desenvolvimento. |
+| `test`           | Executar testes                                                           |
 
-1. `App.js`: Neste componente, você encontrará o comentário "Dadas atualizações no formulário, necessário atualizar a lista de recomendações". Implemente a lógica necessária para atualizar a lista de recomendações com base nas entradas do usuário.
+## 📄 Licença
+Este projeto está licenciado sob a [Licença MIT](https://github.com/marimunari/product-recommender/blob/master/LICENSE).
 
-2. `Form.js`: Este componente contém o comentário "Defina aqui a lógica para atualizar as recomendações e passar para a lista de recomendações". Desenvolva a lógica para processar as entradas do usuário e gerar as recomendações apropriadas.
+## ✍️ Autor
+Desenvolvido por [Mariana Munari](https://github.com/marimunari)
 
-3. `recommendation.service.js`: Neste arquivo de serviço, você verá o comentário "Crie aqui a lógica para retornar os produtos recomendados." Implemente a lógica de negócios para determinar quais produtos devem ser recomendados com base nos critérios fornecidos.
-
-## Observações Adicionais
-
-- Sinta-se à vontade para implementar melhorias na cobertura de testes e no layout da aplicação, caso tenha tempo adicional.
-- O código existente serve como base para sua implementação. Concentre-se em desenvolver a funcionalidade de recomendação de produtos conforme especificado nos requisitos do projeto e nos arquivos mencionados acima.
-
-## Requisitos
-
-- Implementar a lógica de recomendação de produtos com base nas preferências do usuário.
-- Utilizar React.js para o desenvolvimento do front-end.
-- Consumir a API fornecida pelo json-server para obter os dados dos produtos.
-- Seguir as boas práticas de desenvolvimento e organização de código.
-- Implementar testes unitários para as funcionalidades desenvolvidas.
-
-## Como Executar
-
-1. Clone o repositório: `git clone <URL_DO_REPOSITORIO>`
-2. Instale as dependências: `yarn install`
-3. Para instalar o projeto, execute o script `./install.sh` 
-4. Inicie a aplicação: `yarn start`
-
-### Scripts Disponíveis
-
-- `start`: Inicia a aplicação React em modo de desenvolvimento.
-- `start:frontend`: Inicia apenas a parte frontend da aplicação em modo de desenvolvimento.
-- `start:backend`: Inicia apenas a parte backend da aplicação em modo de desenvolvimento.
-- `dev`: Inicia simultaneamente a parte frontend e backend da aplicação em modo de desenvolvimento.
-
-## Critérios de Aceite
-
-1. O serviço de recomendação de produtos deve ser capaz de receber as preferências e funcionalidades desejadas do usuário através de um formulário.
-2. O serviço deve retornar recomendações de produtos com base nas preferências e funcionalidades selecionadas pelo usuário.
-3. Se o tipo de recomendação selecionado for "SingleProduct", o serviço deve retornar apenas um produto que corresponda melhor às preferências e funcionalidades do usuário.
-4. Se o tipo de recomendação selecionado for "MultipleProducts", o serviço deve retornar uma lista de produtos que correspondam às preferências e funcionalidades do usuário.
-5. Em caso de empate na seleção de produtos com base nas preferências e funcionalidades do usuário, o serviço deve retornar o último produto que atende aos critérios de seleção.
-6. O serviço deve ser capaz de lidar com diferentes tipos de preferências e funcionalidades selecionadas pelo usuário.
-7. O serviço deve ser modular e facilmente extensível para futuras atualizações e adições de funcionalidades.
-
-Certifique-se de que todos os critérios de aceite são atendidos durante o desenvolvimento do projeto.
-
-## Autor
-
-Desenvolvido por [Seu Nome]
-
-## Licença
-
-Este projeto está licenciado sob a [Licença MIT](LICENSE).
