@@ -132,11 +132,39 @@ src/
 └── App.js                       # Componente raiz da aplicação
 ```
 
-## 🧩 Funcionalidades
-- Formulário para seleção de preferências e funcionalidades
-- Sistema de recomendação baseado nas preferências do usuário
-- Suporte a recomendação única (`SingleProduct`)
-- Suporte a múltiplas recomendações (`MultipleProducts`)
+## 🔍 Funcionalidades da Aplicação
+
+A aplicação de Recomendação de Produtos da RD Station possui as seguintes funcionalidades principais:
+
+- ✅ **Formulário dinâmico de entrada**
+  - O usuário pode selecionar:
+    - Preferências (ex: foco em Marketing, Vendas, etc)
+    - Funcionalidades desejadas (ex: automações, integração com WhatsApp, CRM)
+    - Tipo de recomendação (única ou múltipla)
+
+- 🎯 **Recomendação inteligente de produtos**
+  - A aplicação utiliza lógica personalizada para recomendar produtos com base nas escolhas do usuário.
+  - Suporta dois tipos de recomendação:
+    - `SingleProduct`: retorna apenas o produto mais adequado.
+    - `MultipleProducts`: retorna uma lista de produtos compatíveis.
+
+- 🔁 **Requisições simuladas com JSON Server**
+  - Os dados dos produtos são carregados de uma API fake (`json-server`) que simula um backend real.
+
+- 🧠 **Lógica de recomendação desacoplada**
+  - A lógica de recomendação é modular e pode ser facilmente expandida para novos critérios ou regras.
+
+- 💬 **Feedback visual em tempo real**
+  - Exibe mensagens de erro ou ausência de resultados com base nas interações do usuário.
+
+- 🧹 **Botão para limpar filtros**
+  - O usuário pode resetar o formulário e recomeçar uma nova recomendação com um clique.
+
+- 🧪 **Testes automatizados**
+  - A aplicação conta com testes para hooks, componentes e serviços principais, garantindo confiabilidade e manutenção do código.
+
+- 📱 **Responsividade e acessibilidade**
+  - Layout responsivo com **Tailwind CSS**, compatível com dispositivos móveis e acessível por teclado.
 
 ## ⚙️ Como Instalar e Rodar o Projeto
 
