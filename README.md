@@ -229,7 +229,7 @@ Certifique-se de ter o **Node.js** na versão 18.3 ou superior. Caso não tenha,
 
 2. Rode o seguinte comando:
   ```bash
-  yarn test
+  yarn test --watchAll
   ```
 
 ## 📜 Scripts Disponíveis
