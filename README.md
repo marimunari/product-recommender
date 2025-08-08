@@ -211,9 +211,14 @@ Certifique-se de ter o **Node.js** na versão 18.3 ou superior. Caso não tenha,
   ./install.sh
   ```
 
-5. Inicie o projeto (frontend e backend simultaneamente):
+5. Inicie o backend:
   ```bash
-  yarn dev
+  yarn start:backend
+  ```
+
+6. Inicie o frontend:
+  ```bash
+  yarn start:frontend
   ```
   
 ## 🚀 Passos para rodar os testes
